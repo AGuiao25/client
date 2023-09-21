@@ -21,21 +21,21 @@ export class ErrorInterceptor implements HttpInterceptor {
         if(error) {
           switch (error.status)
             {
-              case 400:
-                if(error.error.errors) {
-                  const modelStateErrors = [];
-                  for(const key in error.error.errors) {
-                    if(error.error.errors[key]) {
+              // case 400:
+              //   if(error.error.errors) {
+              //     const modelStateErrors = [];
+              //     for(const key in error.error.errors) {
+              //       if(error.error.errors[key]) {
 
-                    modelStateErrors.push(error.error.errors[key])
-                   }
-                  }
-                  throw modelStateErrors;
-                }
-                else 
-                {
-                  this.toastr.error(error.error, error.status.toString());
-                }
+              //       modelStateErrors.push(error.error.errors[key])
+              //      }
+              //     }
+              //     throw modelStateErrors;
+              //   }
+              //   else 
+              //   {
+              //     this.toastr.error(error.error, error.status.toString());
+              //   }
                 case 401:
                   this.toastr.error('Unauthorized', error.status.toString());
                   break;
