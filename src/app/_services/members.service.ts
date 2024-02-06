@@ -9,7 +9,7 @@ import { map, of } from 'rxjs';
   providedIn: 'root'
 })
 export class MembersService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl =  environment.apiUrl;
   members: Member[] = [];
 
   constructor(private http: HttpClient) { }
